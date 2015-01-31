@@ -14,9 +14,9 @@
       <tr>
         <td><%= diagram.name %></td>
         <td><%= diagram.description %></td>
-        <td><%= link_to 'Show', diagram, :class => 'btn btn-default' %></td>
-        <td><%= link_to 'Edit', edit_diagram_path(diagram), :class => 'btn btn-success' %></td>
-        <td><%= link_to 'Destroy', diagram, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %></td>
+        <td><%= link_to 'Show', diagram %></td>
+        <td><%= link_to 'Edit', edit_diagram_path(diagram) %></td>
+        <td><%= link_to 'Destroy', diagram, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Diagram', new_diagram_path, :class => 'btn btn-default' %>
+<%= link_to 'New Diagram', new_diagram_path %>

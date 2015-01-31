@@ -1,4 +1,5 @@
 class DiagramsController < ApplicationController
+  #Restfull service
   before_action :set_diagram, only: [:show, :edit, :update, :destroy]
 
   # GET /diagrams

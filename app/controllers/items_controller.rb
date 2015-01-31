@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  #Restfull service
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :set_diagram
 
@@ -76,6 +77,6 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:text, :description, :name, :diagram)
+      params.require(:item).permit(:text, :description, :name, :diagram, :diagram_id)
     end
 end

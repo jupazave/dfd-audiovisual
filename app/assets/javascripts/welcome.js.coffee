@@ -22,16 +22,22 @@ jQuery ->
 					$("#flowchart").append """
 						<section class="square">
 						    <h2>#{value.name}</h2>
-						    <p>#{value.text}</p>
+						    <p data-text="#{value.description}">#{value.text}</p>
 						</section>
 
 						"""
 				$("#flowchart").append """
 					<section class="elipse">
 						<h2>Fin</h2>
-						<p>Tarea Final</p>
+						<p data-text="Se ha finalizado">Tarea Final</p>
 					</section>
 				"""
+
+				$("#flowchart section").click ->
+					texto = $(this).children("p").text()
+					texto2 = $(this).children("p").data("text")
+					msg = new SpeechSynthesisUtterance(texto + " . " + texto2)
+					window.speechSynthesis.speak(msg)
 				true
 		else
 			$.ajax(

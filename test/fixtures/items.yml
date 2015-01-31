@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  instruction: false
+  description: MyText
+  printer: false
+  allocator: MyString
+  assigned_to: MyString
+  diagram: 
+
+two:
+  instruction: false
+  description: MyText
+  printer: false
+  allocator: MyString
+  assigned_to: MyString
+  diagram: 

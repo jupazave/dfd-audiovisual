@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @diagram.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @diagram.description %>
+</p>
+
+<% @items = @diagram.items %>
+<%= render template: "items/index" %>
+
+<%= link_to 'Edit', edit_diagram_path(@diagram) %>
+<%= link_to 'Back', diagrams_path %>

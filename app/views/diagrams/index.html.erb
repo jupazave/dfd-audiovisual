@@ -15,7 +15,7 @@
         <td><%= diagram.name %></td>
         <td><%= diagram.description %></td>
         <td><%= link_to 'Show', diagram %></td>
-        <td><%= link_to 'Edit', edit_diagram_path(diagram) %></td>
+        <td><%= link_to 'Edit', edit_creator_diagram_path(diagram) %></td>
         <td><%= link_to 'Destroy', diagram, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Diagram', new_diagram_path %>
+<%= link_to 'New Diagram', new_creator_diagram_path %>

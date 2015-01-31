@@ -1,8 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Instruction:</strong>
-  <%= @item.instruction %>
+  <strong>Name:</strong>
+  <%= @item.name %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @item.text %>
 </p>
 
 <p>
@@ -11,19 +16,22 @@
 </p>
 
 <p>
-  <strong>Printer:</strong>
-  <%= @item.printer %>
+  <strong>Type Action:</strong>
+  <%= @item.type_action %>
 </p>
 
 <p>
-  <strong>Allocator:</strong>
-  <%= @item.allocator %>
+  <strong>Position:</strong>
+  <%= @item.position %>
 </p>
 
 <p>
-  <strong>Assigned to:</strong>
-  <%= @item.assigned_to %>
+  <strong>Parent:</strong>
+  <%= @item.parent.name if @item.parent %>
 </p>
+
+
+<%= debug @item.position.to_s%>
 
 <%= link_to 'Edit', edit_diagram_item_path(@diagram, @item) %> |
 <%= link_to 'Back', diagram_path(@diagram) %>

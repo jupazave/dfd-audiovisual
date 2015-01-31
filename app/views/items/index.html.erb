@@ -1,12 +1,12 @@
 <table class="table table-bordered table-striped" id="items">
   <thead>
     <tr>
-      <th>Instruction</th>
+      <th>Name</th>
+      <th>Text</th>
       <th>Description</th>
-      <th>Printer</th>
-      <th>Allocator</th>
-      <th>Assigned to</th>
+      <th>Type Action</th>
       <th>Position</th>
+      <th>Parent</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,13 +14,12 @@
   <tbody>
     <% @items.each do |item| %>
       <tr data-item-id=<%= "#{item.id}" %> class="item">
-        <td><%= item.instruction %></td>
+        <td><%= item.name %></td>
+        <td><%= item.text %></td>
         <td><%= item.description %></td>
-        <td><%= item.printer %></td>
-        <td><%= item.allocator %></td>
-        <td><%= item.assigned_to %></td>
+        <td><%= item.type_action %></td>
         <td><%= item.position %></td>
-        <td><%= item.position %></td>
+        <td><%= item.parent.name if item.parent %> <%= item.true_id.name if item.true_id %></td>
         <td><%= link_to 'Show', diagram_item_path(@diagram, item), :class => 'btn btn-default' %></td>
         <td><%= link_to 'Edit', edit_diagram_item_path(@diagram, item), :class => 'btn btn-success'%></td>
         <td><%= link_to 'Destroy', diagram_item_path(@diagram, item), :class => 'btn btn-danger',  method: :delete, data: { confirm: 'Are you sure?' } %></td>

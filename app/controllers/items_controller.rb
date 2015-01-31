@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    @items = Item.rank(:position).all
+    @items = Item.all
   end
 
   # GET /items/1
@@ -16,19 +16,10 @@ class ItemsController < ApplicationController
   # GET /items/new
   def new
     @item = Item.new
-    la_cuenta = @diagram.items.count
   end
 
   # GET /items/1/edit
   def edit
-  end
-
-  def update_row_order
-    @item = Item.find(item_params[:id])
-    @item.position_position = item_params[:position]
-    @item.save
-
-    render nothing: true # this is a POST action, updates sent via AJAX, no view rendered
   end
 
   # POST /items
@@ -85,6 +76,8 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:instruction, :description, :printer, :allocator, :assigned_to, :diagram, :position, :id)
+      params.require(:item).permit(
+        :name, :text, :description, :diagram_id, :type_action, :position, :parent_id, :true_id, :false_id
+        )
     end
 end

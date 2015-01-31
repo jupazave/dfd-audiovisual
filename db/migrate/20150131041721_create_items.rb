@@ -1,12 +1,15 @@
 class CreateItems < ActiveRecord::Migration
   def change
     create_table :items do |t|
-      t.boolean :instruction
+      t.string :name
+      t.string :text
       t.text :description
-      t.boolean :printer
-      t.string :allocator
-      t.string :assigned_to
       t.integer :diagram_id
+      t.string :type_action
+      t.string :position
+      t.integer :parent_id, :null => true, :index => true
+      t.integer :true_id, :null => true, :index => true
+      t.integer :false_id, :null => true, :index => true
 
       t.timestamps
     end

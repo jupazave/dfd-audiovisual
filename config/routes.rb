@@ -2,12 +2,11 @@ Rails.application.routes.draw do
 
   root "diagrams#index"
 
-  namespace :creator do
-
-    resources :diagrams do
-      resources :items
+  resources :diagrams do
+    resources :items do
+      post :update_row_order, on: :collection 
     end
-
+    
   end
 
 end

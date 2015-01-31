@@ -13,5 +13,5 @@
 <% @items = @diagram.items %>
 <%= render template: "items/index" %>
 
-<%= link_to 'Edit', edit_diagram_path(@diagram) %>
-<%= link_to 'Back', diagrams_path %>
+<%= link_to 'Edit', edit_diagram_path(@diagram), :class => 'btn btn-default' %>
+<%= link_to 'Back', diagrams_path, :class => 'btn btn-default' %>

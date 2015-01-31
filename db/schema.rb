@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20150131041721) do
     t.string   "text"
     t.text     "description"
     t.integer  "row_order"
+    t.integer  "diagram_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

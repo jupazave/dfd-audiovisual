@@ -5,6 +5,7 @@ class CreateItems < ActiveRecord::Migration
       t.string :text
       t.text :description
       t.integer :row_order
+      t.integer :diagram_id
 
       t.timestamps
     end

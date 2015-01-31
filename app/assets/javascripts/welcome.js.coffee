@@ -2,7 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-jQuery ->
+ready= ->
 	$("#flowchart").ready ->
 		flow_id = $("#flowchart").data("id")
 		if flow_id?
@@ -15,28 +15,35 @@ jQuery ->
 				$("#flowchart").append """
 					<section class="elipse">
 						<h2>Inicio</h2>
-						<p>Tarea Inicial</p>
+						<p class="hidden></p>
+						<p class="hidden>Un &oacute;valo que representa el inicio del diagrama de flujo</p>
 					</section>
 				"""
 				$.each response.items, (index, value) ->
 					$("#flowchart").append """
 						<section class="square">
-						    <h2>#{value.name}</h2>
-						    <p data-text="#{value.description}">#{value.text}</p>
+						    <h2>#{value.text}</h2>
+						    <p class="hidden" >#{value.description}</p>
 						</section>
 
 						"""
 				$("#flowchart").append """
 					<section class="elipse">
 						<h2>Fin</h2>
-						<p data-text="Se ha finalizado">Tarea Final</p>
+						<p class="hidden">Un &oacute;valo que representa el fin del diagrama de flujo</p>
 					</section>
 				"""
 
-				$("#flowchart section").click ->
+				$("#flowchart section").click  ->
 					texto = $(this).children("p").text()
-					texto2 = $(this).children("p").data("text")
-					msg = new SpeechSynthesisUtterance(texto + " . " + texto2)
+					msg = new SpeechSynthesisUtterance(texto)
+					msg.lang = 'es'
+					window.speechSynthesis.speak(msg)
+
+				$(".elipse").click  ->
+					texto = $(this).children("p").text()
+					msg = new SpeechSynthesisUtterance(texto)
+					msg.lang = 'es'
 					window.speechSynthesis.speak(msg)
 				true
 		else
@@ -61,6 +68,10 @@ jQuery ->
 				$("#flowcharts h1, #flowcharts p").mouseleave ->
 					texto = $(this).text()
 					msg = new SpeechSynthesisUtterance(texto)
-					console.log msg
+					msg.lang = 'es'
 					window.speechSynthesis.speak(msg)
 	true
+
+
+$(document).ready(ready)
+$(document).on('page:load', ready)

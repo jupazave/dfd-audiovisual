@@ -11,27 +11,19 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :instruction %><br>
-    <%= f.check_box :instruction %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
+  <div class="form-group">
+    <%= f.label :text %>
+    <%= f.text_field :text, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :printer %><br>
-    <%= f.check_box :printer %>
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_area :description, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :allocator %><br>
-    <%= f.text_field :allocator %>
-  </div>
-  <div class="field">
-    <%= f.label :assigned_to %><br>
-    <%= f.text_field :assigned_to %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <%= f.submit "Create", :class => 'btn btn-default'%>
   </div>
 <% end %>

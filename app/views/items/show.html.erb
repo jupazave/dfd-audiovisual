@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Name:</strong>
   <%= @item.name %>
@@ -15,21 +13,7 @@
   <%= @item.description %>
 </p>
 
-<p>
-  <strong>Type Action:</strong>
-  <%= @item.type_action %>
-</p>
-
-<p>
-  <strong>Position:</strong>
-  <%= @item.position %>
-</p>
-
-<p>
-  <strong>Parent:</strong>
-  <%= @item.parent.name if @item.parent %>
-</p>
 
 
-<%= link_to 'Edit', edit_creator_diagram_item_path(@diagram, @item) %> |
-<%= link_to 'Back', creator_diagram_path(@diagram) %>
+<%= link_to 'Edit', edit_diagram_item_path(@diagram, @item), :class => 'btn btn-default' %>
+<%= link_to 'Back', diagram_path(@diagram), :class => 'btn btn-default' %>

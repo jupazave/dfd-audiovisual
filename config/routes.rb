@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  root "diagrams#index"
+  get 'flowcharts/:id' => "welcome#diagram"
+
+  root "welcome#index"
 
   resources :diagrams do
     resources :items do

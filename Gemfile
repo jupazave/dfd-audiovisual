@@ -42,3 +42,5 @@ gem 'spring',        group: :development
 
 gem 'ranked-model'
 gem 'jquery-ui-rails'
+
+gem 'rails-reveal-js'

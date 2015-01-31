@@ -27,12 +27,7 @@ ActiveRecord::Schema.define(version: 20150131041721) do
     t.string   "name"
     t.string   "text"
     t.text     "description"
-    t.integer  "diagram_id"
-    t.string   "type_action"
-    t.string   "position"
-    t.integer  "parent_id"
-    t.integer  "true_id"
-    t.integer  "false_id"
+    t.integer  "row_order"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

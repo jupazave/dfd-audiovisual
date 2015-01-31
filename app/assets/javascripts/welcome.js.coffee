@@ -12,20 +12,26 @@ jQuery ->
 				url: "/diagrams/#{flow_id}.json"
 				dataType: 'json'
 			).done (response) -> 
-				$("#flowchart .reveal .slides").append """
-					<section data-background="#dddddd">
+				$("#flowchart").append """
+					<section class="elipse">
 						<h2>Inicio</h2>
 						<p>Tarea Inicial</p>
 					</section>
 				"""
 				$.each response.items, (index, value) ->
-					$("#flowchart .reveal .slides").append """
-						<section data-background="#dddddd">
+					$("#flowchart").append """
+						<section class="square">
 						    <h2>#{value.name}</h2>
 						    <p>#{value.text}</p>
 						</section>
 
 						"""
+				$("#flowchart").append """
+					<section class="elipse">
+						<h2>Fin</h2>
+						<p>Tarea Final</p>
+					</section>
+				"""
 				true
 		else
 			$.ajax(
